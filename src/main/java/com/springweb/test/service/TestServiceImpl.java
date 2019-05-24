@@ -12,11 +12,12 @@ public class TestServiceImpl implements TestService {
 	@Resource(name="TestDAO")
 	private TestDAO testDAO;
 	
-	public void testdataflow()
+	public String testdataflow()
 	{
 		System.out.println("TestServiceImpl-Start");
 		testDAO.testdataflow();
 		System.out.println("TestServiceImpl-End");
-		return;
+		String b = "bbb";
+		return b;
 	}
 }
