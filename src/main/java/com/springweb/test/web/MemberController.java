@@ -32,7 +32,7 @@ public class MemberController {
 		String member_password = "";
 		member_id = httpServletRequest.getParameter("member_id");
 		member_password = httpServletRequest.getParameter("member_password");
-		
+		// Git Test
 		// TEST DATA
 		member_id = "아이디";
 		member_password = "비밀번호";
