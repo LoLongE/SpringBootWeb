@@ -1,6 +1,8 @@
 package com.springweb.test.web;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -28,6 +30,7 @@ public class MemberController {
 	{
 		System.out.println("selectMemberTest01.do");
 	
+		
 		String member_id = "";
 		String member_password = "";
 		member_id = httpServletRequest.getParameter("member_id");
@@ -38,7 +41,7 @@ public class MemberController {
 		member_password = "비밀번호";
 		// TEST DATA
 		
-		model.addAttribute("member_id", member_id);
+		model.addAttribute("a", member_id);
 		model.addAttribute("member_password", member_password);
 		return "member/membertest";
 	}
@@ -54,7 +57,7 @@ public class MemberController {
 		member_id = "아이디";
 		member_password = "비밀번호";
 		// TEST DATA
-		
+	
 		model.addAttribute("member_id", member_id);
 		model.addAttribute("member_password", member_password);
 		return "member/membertest";
@@ -74,10 +77,50 @@ public class MemberController {
 	public String selectMemberInfo02(Model model, RedirectAttributes redirectAttributes,
 			@ModelAttribute("memberVO") MemberVO memberVO)
 	{
+		memberVO.setMember_name("이우정");
 		memberVO = memberService.selectMemberInfo02(memberVO);
 		model.addAttribute("memberVO", memberVO);
 		return "member/memberinfo02";
 	}
 	
+	@RequestMapping(value="/testIfFor")
+	public String testIfFor()
+	{
+		
+		MemberVO memberVO = new MemberVO();
+		String member_id = "노동현";
+		String member_password = "abcd11223344";
+		
+		
+		if(member_id != null){
+			System.out.println("member_id : " + member_id);
+		}
+		
+		if(member_id == "노동현"){
+			if(member_password == "abcd11223344"){
+				System.out.println("로그인이 되었습니다.");
+			} else {
+				System.out.println("잘못된 비밀번호 입니다.");
+			}
+			System.out.println("회원정보가 없습니다.");
+		}
+		
+		List<MemberVO> listMemberVO = new ArrayList<MemberVO>();
+		memberVO.setMember_id("노동현");
+		listMemberVO.add(0, memberVO);
+		System.out.println("!!!!");
+		System.out.println(listMemberVO.get(0).getMember_id());
+		System.out.println("!!!!");
+		memberVO.setMember_id("이우정");
+		memberVO.setMember_password("adevcd1234");
+		listMemberVO.add(1, memberVO);
+		System.out.println(listMemberVO.size());
+		for (int i =0; i<listMemberVO.size(); i++){
+			System.out.println(i);
+			System.out.println(listMemberVO.get(i).getMember_id());
+			System.out.println(listMemberVO.get(i).getMember_password());
+		}
+		return null;
+	}
 	
 }

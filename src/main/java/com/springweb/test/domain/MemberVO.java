@@ -4,11 +4,13 @@ public class MemberVO {
 
 	private String member_id;
 
-	private String member_password;
-	
 	private String member_name;
 
-	private String member_no;
+	private String member_password;	
+
+	private String member_phone;
+	
+	private String member_email;
 
 	public String getMember_id() {
 		return member_id;
@@ -16,14 +18,6 @@ public class MemberVO {
 
 	public void setMember_id(String member_id) {
 		this.member_id = member_id;
-	}
-
-	public String getMember_password() {
-		return member_password;
-	}
-
-	public void setMember_password(String member_password) {
-		this.member_password = member_password;
 	}
 
 	public String getMember_name() {
@@ -34,12 +28,28 @@ public class MemberVO {
 		this.member_name = member_name;
 	}
 
-	public String getMember_no() {
-		return member_no;
+	public String getMember_password() {
+		return member_password;
 	}
 
-	public void setMember_no(String member_no) {
-		this.member_no = member_no;
+	public void setMember_password(String member_password) {
+		this.member_password = member_password;
 	}
 
+	public String getMember_phone() {
+		return member_phone;
+	}
+
+	public void setMember_phone(String member_phone) {
+		this.member_phone = member_phone;
+	}
+
+	public String getMember_email() {
+		return member_email;
+	}
+
+	public void setMember_email(String member_email) {
+		this.member_email = member_email;
+	}
+	
 }

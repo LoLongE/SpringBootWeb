@@ -19,6 +19,7 @@ ID : ${memberVO.member_id} // PW : ${memberVO.member_password}
 			<th>번호</th>
 			<th>제목</th>
 			<th>작성자</th>
+			<th>내용</th>
 		</tr>
 	</thead>
 		
@@ -27,6 +28,19 @@ ID : ${memberVO.member_id} // PW : ${memberVO.member_password}
 			<td>1</td>
 			<td>테스트 제목</td>
 			<td>테스트 작성자</td>
+			<td>테스트 내용</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>제목 입니다...!!</td>
+			<td>작성자</td>
+			<td>테스트 내용내용내용내용</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>게시글 000003</td>
+			<td>노동현</td>
+			<td>내용내용내용내용내용내용내용내용내용내용내용내용</td>
 		</tr>
 	</tbody>
 </table>
